@@ -120,6 +120,25 @@
   (display-fill-column-indicator-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Add small horizontal margin
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq-default left-margin-width 1
+              right-margin-width 1)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; We don't always need company
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq company-global-modes
+      '(not
+        org-mode
+        erc-mode
+        circe-mode
+        message-mode
+        help-mode
+        gud-mode
+        vterm-mode))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Org mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq org-directory "~/org-files/")
@@ -127,5 +146,14 @@
   (setq org-ellipsis " ▼ "
         org-hide-emphasis-markers t
         org-startup-folded t)
+
   (set-face-attribute 'org-done nil :strike-through t)
-  (set-face-attribute 'org-headline-done nil :strike-through t))
+  (set-face-attribute 'org-headline-done nil :strike-through t)
+
+  (map! :map org-mode-map
+        :desc "Zoom in to subtree" "s-." #'org-narrow-to-subtree
+        :desc "Zoom out from subtree" "s-," #'widen
+
+        :localleader
+        :desc "Follow link at point" "RET" #'org-open-at-point
+        :desc "Update dynamic blocks" "R" #'org-update-all-dblocks))
