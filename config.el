@@ -118,6 +118,9 @@
 (add-hook! emacs-lisp-mode
   (setq display-fill-column-indicator-column 80)
   (display-fill-column-indicator-mode))
+(add-hook! org-mode
+  (setq display-fill-column-indicator-column 80)
+  (display-fill-column-indicator-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Add small horizontal margin
@@ -145,7 +148,18 @@
 (after! org
   (setq org-ellipsis " ▼ "
         org-hide-emphasis-markers t
-        org-startup-folded t)
+        org-startup-folded t
+        org-todo-keywords '((sequence
+                             "TODO(t)"   ; A task that needs doing
+                             "PROJ(p)"   ; A project, contains other tasks
+                             "LOOP(r)"   ; A recurring task
+                             "WIPR(w)"   ; A task that is in progress
+                             "HOLD(h)"   ; This task is on hold
+                             "IDEA(i)"   ; An unconfirmed task or an idea
+                             "|"
+                             "DONE(d)"   ; Task successfully completed
+                             "KILL(k)")) ; Task was cancelled
+        org-log-done t)
 
   (set-face-attribute 'org-done nil :strike-through t)
   (set-face-attribute 'org-headline-done nil :strike-through t)
