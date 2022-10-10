@@ -144,7 +144,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Org mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq org-directory "~/org-files/")
+(setq org-directory "~/org-files/"
+      org-roam-directory "~/org-files/roam/")
 (after! org
   (setq org-ellipsis " ▼ "
         org-hide-emphasis-markers t
@@ -167,6 +168,7 @@
   (map! :map org-mode-map
         :desc "Zoom in to subtree" "s-." #'org-narrow-to-subtree
         :desc "Zoom out from subtree" "s-," #'widen
+        :desc "Cmd+i for completion in Roam" "s-i" #'completion-at-point
 
         :localleader
         :desc "Follow link at point" "RET" #'org-open-at-point
