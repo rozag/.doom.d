@@ -121,6 +121,9 @@
 (add-hook! org-mode
   (setq display-fill-column-indicator-column 80)
   (display-fill-column-indicator-mode))
+(add-hook! dart-mode
+  (setq display-fill-column-indicator-column 80)
+  (display-fill-column-indicator-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Add small horizontal margin
@@ -173,3 +176,13 @@
         :localleader
         :desc "Follow link at point" "RET" #'org-open-at-point
         :desc "Update dynamic blocks" "R" #'org-update-all-dblocks))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Dart
+;; List of supported settings:
+;;   https://emacs-lsp.github.io/lsp-dart/#supported-settings
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(after! lsp-dart
+  (setq lsp-dart-main-code-lens nil
+        lsp-dart-flutter-fringe-colors nil
+        lsp-dart-flutter-widget-guides nil))
