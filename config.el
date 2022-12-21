@@ -127,6 +127,9 @@
 (add-hook! python-mode
   (setq display-fill-column-indicator-column 88) ;; 88 b/c of `black`
   (display-fill-column-indicator-mode))
+(add-hook! markdown-mode
+  (setq display-fill-column-indicator-column 80)
+  (display-fill-column-indicator-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Add small horizontal margin
