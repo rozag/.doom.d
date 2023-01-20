@@ -130,6 +130,9 @@
 (add-hook! markdown-mode
   (setq display-fill-column-indicator-column 80)
   (display-fill-column-indicator-mode))
+(add-hook! dockerfile-mode
+  (setq display-fill-column-indicator-column 80)
+  (display-fill-column-indicator-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Add small horizontal margin
