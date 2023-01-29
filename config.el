@@ -136,6 +136,9 @@
 (add-hook! typescript-mode
   (setq display-fill-column-indicator-column 80)
   (display-fill-column-indicator-mode))
+(add-hook! solidity-mode
+  (setq display-fill-column-indicator-column 80)
+  (display-fill-column-indicator-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Let doom format module format some files, not LSP
@@ -224,4 +227,6 @@
 ;; Familiar buffer switching
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (map! :desc "Next buffer" "C-<tab>" #'next-buffer
-      :desc "Previous buffer" "C-S-<tab>" #'previous-buffer)
+      :desc "Previous buffer" "C-S-<tab>" #'previous-buffer
+      :desc "Next workspace" "M-s-<right>" #'+workspace/switch-right
+      :desc "Previous workspace" "M-s-<left>" #'+workspace/switch-left)
