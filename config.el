@@ -224,9 +224,15 @@
   (setq neo-window-width 40))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Familiar buffer switching
+;; Natural buffer, window and workspace switching
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(map! :desc "Next buffer" "C-<tab>" #'next-buffer
-      :desc "Previous buffer" "C-S-<tab>" #'previous-buffer
-      :desc "Next workspace" "M-s-<right>" #'+workspace/switch-right
-      :desc "Previous workspace" "M-s-<left>" #'+workspace/switch-left)
+(map! :desc "Previous buffer" "C-S-<tab>" #'previous-buffer
+      :desc "Next buffer" "C-<tab>" #'next-buffer
+
+      :desc "Go to window on left" "M-s-<left>" #'evil-window-left
+      :desc "Go to window on top" "M-s-<up>" #'evil-window-up
+      :desc "Go to window on right" "M-s-<right>" #'evil-window-right
+      :desc "Go to window on bottom" "M-s-<down>" #'evil-window-down
+
+      :desc "Previous workspace" "s-<left>" #'+workspace/switch-left
+      :desc "Next workspace" "s-<right>" #'+workspace/switch-right)
