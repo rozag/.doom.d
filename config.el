@@ -236,3 +236,8 @@
 
       :desc "Previous workspace" "s-<left>" #'+workspace/switch-left
       :desc "Next workspace" "s-<right>" #'+workspace/switch-right)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Disable exit confirmation
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq confirm-kill-emacs nil)
