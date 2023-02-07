@@ -139,6 +139,9 @@
 (add-hook! solidity-mode
   (setq display-fill-column-indicator-column 80)
   (display-fill-column-indicator-mode))
+(add-hook! go-mode
+  (setq display-fill-column-indicator-column 80)
+  (display-fill-column-indicator-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Let doom format module format some files, not LSP
@@ -146,6 +149,8 @@
 (add-hook! json-mode
   (setq +format-with-lsp nil))
 (add-hook! typescript-mode
+  (setq +format-with-lsp nil))
+(add-hook! go-mode
   (setq +format-with-lsp nil))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -241,3 +246,8 @@
 ;; Disable exit confirmation
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq confirm-kill-emacs nil)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Adjust tab width
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq-default tab-width 2)
