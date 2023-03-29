@@ -264,7 +264,6 @@
   :hook (prog-mode . copilot-mode)
   :bind (("s-i" . 'copilot-complete)
          :map copilot-completion-map
-         ("<tab>" . 'copilot-accept-completion)
-         ("TAB" . 'copilot-accept-completion)
+         ("M-n" . 'copilot-accept-completion)
          ("M-]" . 'copilot-next-completion)
          ("M-[" . 'copilot-previous-completion)))
