@@ -267,3 +267,10 @@
          ("M-n" . 'copilot-accept-completion)
          ("M-]" . 'copilot-next-completion)
          ("M-[" . 'copilot-previous-completion)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; RSS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-hook 'elfeed-search-mode-hook #'elfeed-update)
+(map! :map doom-leader-open-map
+      :desc "elfeed" "n" #'elfeed)
