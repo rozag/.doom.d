@@ -196,6 +196,7 @@
 
   (set-face-attribute 'org-done nil :strike-through t)
   (set-face-attribute 'org-headline-done nil :strike-through t)
+  (set-face-attribute '+org-todo-project nil :italic t :foreground "#b294bb")
 
   (map! :map org-mode-map
         :desc "Zoom in to subtree" "s-." #'org-narrow-to-subtree
