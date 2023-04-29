@@ -275,3 +275,10 @@
 (add-hook 'elfeed-search-mode-hook #'elfeed-update)
 (map! :map doom-leader-open-map
       :desc "elfeed" "n" #'elfeed)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Magit
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(after! magit
+  (setq magit-todos-keywords-list
+        '("TODO" "FIXME" "REVIEW" "HACK" "DEPRECATED" "NOTE" "BUG" "XXX")))
