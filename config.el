@@ -37,9 +37,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Font
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq doom-font (font-spec :family "JetBrains Mono" :size 14)
-      doom-variable-pitch-font (font-spec :family "JetBrains Mono" :size 14)
-      doom-big-font (font-spec :family "JetBrains Mono" :size 23))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 14)
+      doom-variable-pitch-font
+        (font-spec :family "JetBrainsMono Nerd Font" :size 14)
+      doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 23))
 (after! doom-themes
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))
@@ -140,6 +141,9 @@
   (setq display-fill-column-indicator-column 80)
   (display-fill-column-indicator-mode))
 (add-hook! go-mode
+  (setq display-fill-column-indicator-column 80)
+  (display-fill-column-indicator-mode))
+(add-hook! lua-mode
   (setq display-fill-column-indicator-column 80)
   (display-fill-column-indicator-mode))
 
